@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-bento-bg: #09090b; /* zinc-950 */
+  --color-bento-card: #18181b; /* zinc-900 */
+  --color-bento-border: #27272a; /* zinc-800 */
+  --color-bento-accent: #06b6d4; /* cyan-500 */
+  --color-bento-text-muted: #71717a; /* zinc-500 */
+  --color-bento-text: #fafafa; /* zinc-50 */
+}
+
+@layer base {
+  body {
+    @apply bg-bento-bg text-bento-text font-sans selection:bg-bento-accent selection:text-zinc-950;
+  }
+}
+
+.bento-card {
+  @apply border border-bento-border rounded-[2rem] p-8 transition-all duration-300;
+}
+
+.label-caps {
+  @apply text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-bento-text-muted italic;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
